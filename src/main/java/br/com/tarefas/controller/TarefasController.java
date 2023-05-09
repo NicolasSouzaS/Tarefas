@@ -34,10 +34,17 @@ public class TarefasController {
 	}
 	
 	@GetMapping("/tarefas/listar/Aberto")
-	public List<Tarefas> getStringToMode() {
+	public List<Tarefas> getEstadoAberto() {
 		return tr.findByEstado(Estado.Aberto);
 	   
 	}
+	
+	@GetMapping("/tarefas/listar/Finalizado")
+	public List<Tarefas> getEstadoFinalizado() {
+		return tr.findByEstado(Estado.Finalizado);
+	   
+	}
+
 	
 	
 	@PostMapping("/tarefas/cadastrar")
